@@ -1,0 +1,47 @@
+---
+title: "Notes on Learning Bayesia Statistics Podcast"
+author: "Luc Bonnafous"
+date: "10/27/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Chapter 
+- Probability an model building
+- Arviz
+
+
+## Chapter 3.1: Probabilistic Programming ans Why use it, with Colin Carol
+
+- Michael Bettancourt quote: " You do Bayesian inference because you care about the uncertainty in your model
+parameters" (including, but not limited to latent variables that can't be looked at), quantifying it etc. For pure prediction, generally one would go to machine learning (scikit-learn, NN, etc. ), even though in some cases prediction is indeed better with Bayesian approaches. Bayesian models can also be more nuanced than ML or frequentist ones, tailored to a situation. The price is that one needs to think hard about the generating process coming from them, they are harder to implement at the beginning.
+- Understanding the no U-turn sampler, look at the PyMC3 Gitub history; the first implementation, very close to
+Gelman's paper; it is now nicely written
+- Good fat tail example: on average, 5% of flights in the US are canceled each day. Thus a naive way to handle this for a flight insurance company is to charge 5% on each plane ticket to cover for this risk from a flight insurance perspective. The issue is that the risk is correlated: canceled planes in Charlotte generally lead to further flight delays getting to NYC adnthen delays out from NYC. There is a risk correlation structure which leads to fat-tails. i.e., on the worst day ("catastrophic event"), the number of planes canceled and delayed will be much higher than 5% of flights you need to reimburse as an insurance company. This is what you need to worry about because this is what will bankrupt you. Thus, to cover for this risk, you need to capture very well the uncertainty around the "share of flight canceled on any given day" variable / parameter in your pricing model / loss function. Bayesian methods are well equiped for this. In the end you might design your premium on the 99\{th} percentile of this variable, oin any case, taking into account these extreme events (a 1 in 100 event will here happen 3 times a year. the temporal correlation is hee ignored fyi).
+
+- 2 very interesting libraries: TensorFlow Probability and Pyro
+- PyMC4
+
+
+## Chapter 3.3: How to use Bayes in industry, with Colin Carroll
+- 2 very interesting libraries: TensorFlow Probability and Arviz/xarray; Pyro
+- 
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
