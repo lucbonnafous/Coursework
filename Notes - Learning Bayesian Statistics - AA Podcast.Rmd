@@ -9,8 +9,16 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Chapter 1: Bayes, open-source and bioinformatics, with Osvaldo Martin
+- Overfitting is when the model learns from the data rather than from the underlying pattern that produced it.In 
+this case, it will not generalize well and will not work on yet unseen data.
+- When comparing models, one wants to know about this generalization capability (maybe less in ML), how "on average" (a bit of a frequentist idea here :)), the model will perform when given new data.
+- Hence cross-validation methods and information criteria. 
+- Pb often seen: fitting a Poisson distribution (with same mean and variance parameter) 
+on overdispersed data; a negative binomial distribution or zero-inflated negative binomial distrib (or zero-inflated poisson distribution) might be better.
+- When checking a model, one should use the prior knowledge that was not possible to include in the model to check coherence of the data-generating process.
 
-## Chapter 
+## Chapter 2: 
 - Probability an model building
 - Arviz
 
